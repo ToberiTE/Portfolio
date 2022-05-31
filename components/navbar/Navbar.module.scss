@@ -82,8 +82,7 @@
           transition: top 350ms ease, font-size 350ms ease;
 
           &:hover::after,
-          &:focus-visible::after,
-          &.active::after {
+          &:focus-visible::after {
             content: "";
             position: absolute;
             top: 1.75rem;
@@ -101,6 +100,29 @@
               100% {
                 left: 0.1rem;
                 width: 95%;
+              }
+            }
+          }
+          @include screen(large) {
+            &.active::after {
+              content: "";
+              position: absolute;
+              top: 1.75rem;
+              left: 0.1rem;
+              width: 0;
+              height: 0.1rem;
+              transform: translateZ(0);
+              background-color: var(--clr-primary);
+              animation: expand-border 200ms linear forwards;
+              @keyframes expand-border {
+                0% {
+                  left: 50%;
+                  width: 0;
+                }
+                100% {
+                  left: 0.1rem;
+                  width: 95%;
+                }
               }
             }
           }

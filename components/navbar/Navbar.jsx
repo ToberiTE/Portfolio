@@ -29,7 +29,7 @@ export default function Navbar() {
       ([el]) => {
         setServicesHref(el.isIntersecting);
       },
-      { threshold: 0.2 }
+      { threshold: 0.9 }
     );
     observer.observe(services);
     return () => observer.unobserve(services);
@@ -41,7 +41,7 @@ export default function Navbar() {
       ([el]) => {
         setWorkHref(el.isIntersecting);
       },
-      { threshold: 0.2 }
+      { threshold: 0.9 }
     );
     observer.observe(work);
     return () => observer.unobserve(work);
@@ -53,7 +53,7 @@ export default function Navbar() {
       ([el]) => {
         setContactHref(el.isIntersecting);
       },
-      { threshold: 0.9 }
+      { threshold: 0.8 }
     );
     observer.observe(contact);
     return () => observer.unobserve(contact);
