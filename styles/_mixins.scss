@@ -1,0 +1,27 @@
+@mixin screen($screens...) {
+  @each $scr in $screens {
+    @if $scr==small {
+      @media (max-width: 30em) {
+        @content;
+      }
+    }
+    @if $scr==medium {
+      @media (min-width: 30em) and (max-width: 60em) {
+        @content;
+      }
+    }
+    @if $scr==large {
+      @media (min-width: 60em) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin fade-in($name) {
+  @keyframes #{$name} {
+    100% {
+      opacity: 1;
+    }
+  }
+}

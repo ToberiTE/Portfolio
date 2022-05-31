@@ -1,0 +1,37 @@
+.light-theme {
+  --clr-primary: hsl(0, 0%, 15%);
+  --bg-primary: hsl(0, 0%, 95%);
+  --bg-section: hsl(0, 0%, 95%);
+  --bg-curve: hsl(0, 0%, 95%);
+  --bg-mobilenav: hsla(0, 0%, 75%, 0.95);
+  --bg-navbar: hsla(0, 0%, 75%, 0.9);
+  --bg-cardtitle: hsla(0, 0%, 100%, 0.15);
+  --clr-accent-1: hsl(0, 0%, 20%);
+  --clr-accent-2: hsl(274, 100%, 52%);
+  --clr-accent-3: hsl(274, 94%, 45%);
+  --clr-accent-4: hsl(274, 94%, 39%);
+  --clr-accent-5: hsl(274, 93%, 33%);
+  --clr-accent-6: hsl(274, 93%, 27%);
+  --clr-accent-7: hsl(274, 92%, 21%);
+  --br-themetoggle: hsla(0, 0%, 0%, 0.35);
+  --clr-img: invert(85%);
+}
+
+.dark-theme {
+  --clr-primary: hsl(0, 0%, 100%);
+  --bg-primary: hsl(270, 100%, 10%);
+  --bg-section: hsl(0, 0%, 95%);
+  --bg-curve: hsl(0, 0%, 95%);
+  --bg-mobilenav: hsl(270, 100%, 10%, 0.95);
+  --bg-navbar: hsla(270, 100%, 10%, 0.9);
+  --bg-cardtitle: hsla(0, 0%, 0%, 0.15);
+  --clr-accent-1: hsl(0, 0%, 90%);
+  --clr-accent-2: hsl(274, 100%, 52%);
+  --clr-accent-3: hsl(274, 94%, 45%);
+  --clr-accent-4: hsl(274, 94%, 39%);
+  --clr-accent-5: hsl(274, 93%, 33%);
+  --clr-accent-6: hsl(274, 93%, 27%);
+  --clr-accent-7: hsl(274, 92%, 21%);
+  --br-themetoggle: hsla(0, 0%, 100%, 0.35);
+  --clr-img: invert(0%);
+}

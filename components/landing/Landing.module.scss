@@ -1,0 +1,131 @@
+@import "../../styles/utilities";
+@import "../../styles/mixins";
+
+.landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right top, #172347, #015268, #025385, #038298)
+    center / cover no-repeat;
+
+  .skipbtn {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    z-index: 1;
+    top: 10rem;
+    border: 0.1rem solid var(--clr-primary);
+    border-radius: 0.25rem;
+    font-size: inherit;
+    color: var(--clr-primary);
+    transform: translate3d(0, -100vh, 0);
+
+    &:focus {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .container {
+    @include screen(medium, large) {
+      align-self: start;
+      padding-left: 10vw;
+    }
+
+    h1 {
+      color: var(--clr-accent-1);
+      font-family: $ff-accent-1;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      max-width: 16ch;
+      padding-bottom: 2rem;
+      font-weight: $fw-700;
+      @include screen(medium) {
+        padding-bottom: 1rem;
+      }
+      @include screen(small) {
+        padding-bottom: 1.5rem;
+      }
+      & span {
+        color: $clr-accent-2;
+      }
+    }
+
+    .landingbtn {
+      opacity: 0;
+      @include fade-in(fade-btn);
+      animation: fade-btn 250ms 3000ms ease forwards;
+      padding: 0.8rem 2rem;
+      border-radius: 100vw;
+      display: inline-block;
+      text-decoration: none;
+      color: $clr-primary;
+      position: relative;
+      background: linear-gradient(140deg, $clr-accent-2, $clr-accent-5);
+      &::after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        border-radius: 100vw;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 700ms ease;
+        background: $clr-accent-2;
+      }
+      &:hover,
+      &:focus {
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+.scroll {
+  display: grid;
+  place-items: center;
+  padding-top: 3.5rem;
+  position: absolute;
+  width: 2.5rem;
+  bottom: 1.25rem;
+  z-index: 1;
+  color: var(--clr-primary);
+  transition: opacity 500ms ease, visibility 500ms ease;
+
+  &::after {
+    opacity: 0;
+    content: "";
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: -0.65rem;
+    border-left: 0.125rem solid var(--clr-primary);
+    border-bottom: 0.125rem solid var(--clr-primary);
+    transform: rotate(-45deg) translate3d(0, 0, 0);
+    animation: movement 1500ms 4000ms infinite;
+    @keyframes movement {
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(-45deg) translate3d(-1.5rem, 1.5rem, 0);
+      }
+    }
+  }
+}
+.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+.show {
+  visibility: visible;
+  opacity: 1;
+}

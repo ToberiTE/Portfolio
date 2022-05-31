@@ -1,0 +1,70 @@
+@import "../../styles/utilities";
+@import "../../styles/mixins";
+
+.work {
+  display: flex;
+  @include screen(large) {
+    height: calc(100vh - 4rem);
+  }
+
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(140deg, var(--bg-primary), $bg-accent-4);
+  overflow: hidden;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    .wrapper {
+      display: flex;
+      flex-direction: row;
+      @include screen(small) {
+        flex-direction: column;
+      }
+      justify-content: center;
+      align-items: center;
+      gap: 6em;
+
+      .card {
+        display: grid;
+        z-index: 0;
+        grid-template-columns: 18rem;
+        grid-template-rows: 13rem 13rem 3rem;
+        grid-template-areas: "image" "body";
+        background-color: var(--clr-bg);
+        box-shadow: 0.4rem 0.4rem 1rem hsla(0, 0%, 0%, 0.9);
+        padding: 2rem;
+        border-radius: 1rem;
+        transition: 250ms ease;
+
+        &:hover {
+          transform: scale3d(1.125, 1.125, 1);
+          box-shadow: 0 0 1rem hsla(0, 0%, 0%, 0.3);
+        }
+
+        .img {
+          grid-area: image;
+          justify-self: center;
+          align-self: center;
+          filter: var(--clr-img);
+          width: 6rem;
+          aspect-ratio: 1;
+        }
+
+        .body {
+          grid-area: body;
+          color: var(--clr-accent-1);
+
+          .title {
+            grid-area: body;
+            // color: var(--clr-primary);
+            color: rgb(190, 0, 0);
+            padding-top: 5%;
+            padding-bottom: 10%;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
