@@ -17,7 +17,7 @@ export default function Navbar() {
       ([el]) => {
         setLandingHref(el.isIntersecting);
       },
-      { threshold: 0.9 }
+      { threshold: 0.8 }
     );
     observer.observe(landing);
     return () => observer.unobserve(landing);
@@ -25,11 +25,14 @@ export default function Navbar() {
 
   useEffect(() => {
     const services = document.getElementById("services");
+    const elHeight = services.getBoundingClientRect().height;
+    var th = 0.9;
+    elHeight > window.innerHeight ? (th = 0.3) : (th = 0.9);
     const observer = new IntersectionObserver(
       ([el]) => {
         setServicesHref(el.isIntersecting);
       },
-      { threshold: 0.9 }
+      { threshold: th }
     );
     observer.observe(services);
     return () => observer.unobserve(services);
@@ -37,11 +40,14 @@ export default function Navbar() {
 
   useEffect(() => {
     const work = document.getElementById("work");
+    const elHeight = work.getBoundingClientRect().height;
+    var th = 0.9;
+    elHeight > window.innerHeight ? (th = 0.3) : (th = 0.9);
     const observer = new IntersectionObserver(
       ([el]) => {
         setWorkHref(el.isIntersecting);
       },
-      { threshold: 0.9 }
+      { threshold: th }
     );
     observer.observe(work);
     return () => observer.unobserve(work);
