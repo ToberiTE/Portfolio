@@ -3,7 +3,6 @@
 
 .card {
   min-width: 100%;
-  height: 100%;
   box-shadow: 0 0 1rem hsla(0, 0%, 0%, 0.6);
   transform: perspective(100rem) rotateY(0) translateY(0);
   transform-style: preserve-3d;
@@ -11,25 +10,25 @@
     box-shadow 350ms;
   position: relative;
   cursor: pointer;
-  z-index: 0;
+  z-index: 1;
 
   &:nth-child(1) {
-    background-color: $bg-accent-3;
+    background-color: var(--clr-accent-3);
   }
   &:nth-child(2) {
-    background-color: $bg-accent-4;
+    background-color: var(--clr-accent-2);
   }
   &:nth-child(3) {
-    background-color: $bg-accent-1;
+    background-color: var(--clr-accent-1);
   }
   &:nth-child(4) {
-    background-color: $bg-accent-2;
+    background-color: var(--clr-accent-4);
   }
   &:nth-child(5) {
-    background-color: $bg-accent-4;
+    background-color: var(--clr-accent-3);
   }
   &:nth-child(6) {
-    background-color: $bg-accent-3;
+    background-color: var(--clr-accent-2);
   }
 
   &.flip {
@@ -53,26 +52,24 @@
     width: 100%;
     height: 100%;
   }
-
-  .back {
-    transform: rotateY(180deg);
-    @include screen(small, medium) {
-      transform: rotateY(180deg) translateZ(1px);
-    }
-  }
   .img {
-    min-width: 150%;
+    filter: var(--clr-img);
   }
+  .back {
+    transform: rotateY(180deg) translateZ(0);
+  }
+
   .title {
+    text-align: center;
     padding-top: max(8vw, 7rem);
   }
   .title,
   .text {
-    color: $clr-primary;
+    color: var(--clr-primary);
     font-weight: $fw-300;
   }
   .text {
     text-align: center;
-    padding-inline: 4.5vw;
+    padding-inline: 5%;
   }
 }

@@ -66,12 +66,13 @@ export default function Navbar() {
   });
 
   useEffect(() => {
-    const nav = document.querySelector("header");
+    const landing = document.getElementById("landing");
+    const height = landing.getBoundingClientRect().height;
     const observer = new IntersectionObserver(([el]) => {
-      setNavStyle(el.intersectionRatio < 1);
+      setNavStyle(el.isIntersecting && scrollY > height / 2);
     });
-    observer.observe(nav);
-    return () => observer.unobserve(nav);
+    observer.observe(document.body);
+    return () => observer.unobserve(document.body);
   });
 
   const navRef = useRef();

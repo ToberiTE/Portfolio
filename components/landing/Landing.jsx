@@ -12,7 +12,7 @@ export default function Landing() {
       ([el]) => {
         el.isIntersecting ? setShowElement(true) : setShowElement(false);
       },
-      { threshold: 1 }
+      { threshold: 0.8 }
     );
     observer.observe(landing);
     return () => observer.unobserve(landing);

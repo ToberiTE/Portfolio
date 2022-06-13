@@ -3,16 +3,28 @@
 
 .services {
   overflow: hidden;
+
   @include screen(large) {
     height: calc(100vh - 4rem);
   }
+
   @include screen(medium) {
-    min-height: 300vh;
+    min-height: 100vh;
+    padding-bottom: min(16rem, 50vh);
   }
+
   @include screen(small) {
     min-height: 210vh;
   }
-  background: linear-gradient(140deg, var(--bg-primary), $bg-accent-3);
+
+  background: linear-gradient(
+    55deg,
+    var(--clr-accent-1) 15%,
+    var(--clr-accent-2) 15%,
+    var(--clr-accent-2) 57%,
+    var(--clr-accent-1) 57%,
+    var(--clr-accent-1) 100%
+  );
 
   .container {
     display: flex;
@@ -24,6 +36,7 @@
       transition: opacity 1500ms ease, visibility 1500ms ease,
         transform 1000ms ease;
     }
+
     @include screen(small, medium) {
       flex-direction: column;
       max-width: 100%;
@@ -32,8 +45,8 @@
     .textwrapper {
       display: flex;
       flex-direction: column;
-      min-width: 50%;
       justify-content: center;
+      min-width: 50%;
       z-index: 2;
       @include screen(small, medium) {
         max-width: 100%;
@@ -43,7 +56,6 @@
         min-width: 15ch;
       }
       p {
-        font-size: clamp(1.1125rem, 2vw - 0.5rem, 1.2125rem);
         &:nth-child(2) {
           max-width: 76ch;
           padding-top: 1rem;
@@ -67,9 +79,14 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
-      z-index: 0;
+      z-index: 1;
       min-width: 50%;
-      min-height: 95vh;
+      @include screen(small, large) {
+        height: 95vh;
+      }
+      @include screen(medium) {
+        height: min(95vh, 30rem);
+      }
       margin-left: 4vw;
       @include screen(small, medium) {
         margin-left: 0;

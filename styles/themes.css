@@ -1,37 +1,23 @@
 .light-theme {
-  --clr-primary: hsl(0, 0%, 15%);
-  --bg-primary: hsl(0, 0%, 95%);
-  --bg-section: hsl(0, 0%, 95%);
-  --bg-curve: hsl(0, 0%, 95%);
-  --bg-mobilenav: hsla(0, 0%, 75%, 0.95);
-  --bg-navbar: hsla(0, 0%, 75%, 0.9);
-  --bg-cardtitle: hsla(0, 0%, 100%, 0.15);
-  --clr-accent-1: hsl(0, 0%, 20%);
-  --clr-accent-2: hsl(274, 100%, 52%);
-  --clr-accent-3: hsl(274, 94%, 45%);
-  --clr-accent-4: hsl(274, 94%, 39%);
-  --clr-accent-5: hsl(274, 93%, 33%);
-  --clr-accent-6: hsl(274, 93%, 27%);
-  --clr-accent-7: hsl(274, 92%, 21%);
-  --br-themetoggle: hsla(0, 0%, 0%, 0.35);
-  --clr-img: invert(85%);
+  --clr-primary: #000000;
+  --clr-accent-1: #c0e5fe;
+  --clr-accent-2: #90ccfe;
+  --clr-accent-3: #60b2fe;
+  --clr-accent-4: #3099fe;
+  --clr-img: invert(100%);
+  --bg-html: #3099fe;
+  --bg-navbar: #3099fe;
+  --landing-bg: url(../public/lightpolygon.png);
 }
 
 .dark-theme {
-  --clr-primary: hsl(0, 0%, 100%);
-  --bg-primary: hsl(270, 100%, 10%);
-  --bg-section: hsl(0, 0%, 95%);
-  --bg-curve: hsl(0, 0%, 95%);
-  --bg-mobilenav: hsl(270, 100%, 10%, 0.95);
-  --bg-navbar: hsla(270, 100%, 10%, 0.9);
-  --bg-cardtitle: hsla(0, 0%, 0%, 0.15);
-  --clr-accent-1: hsl(0, 0%, 90%);
-  --clr-accent-2: hsl(274, 100%, 52%);
-  --clr-accent-3: hsl(274, 94%, 45%);
-  --clr-accent-4: hsl(274, 94%, 39%);
-  --clr-accent-5: hsl(274, 93%, 33%);
-  --clr-accent-6: hsl(274, 93%, 27%);
-  --clr-accent-7: hsl(274, 92%, 21%);
-  --br-themetoggle: hsla(0, 0%, 100%, 0.35);
+  --clr-primary: #f0fffe;
+  --clr-accent-1: #003366;
+  --clr-accent-2: #02234d;
+  --clr-accent-3: #2b0933;
+  --clr-accent-4: #030f33;
   --clr-img: invert(0%);
+  --bg-html: #030f33;
+  --bg-navbar: #030f33;
+  --landing-bg: url(../public/darkpolygon.png);
 }

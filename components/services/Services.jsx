@@ -14,37 +14,37 @@ export default function Services() {
       id: "1",
       image: webdev,
       title: "Web Development",
-      text: "Primarily fullstack, optionally either stack, React/Nextjs and C# .NET",
+      text: "Primarily fullstack, front- and backends/apis to large scale applications, services and systems.",
     },
     {
       id: "2",
       image: swdev,
       title: "Software Development",
-      text: "Cross-platform software on C# .NET",
+      text: "Cross-platform software & systems.",
     },
     {
       id: "3",
       image: design,
       title: "UI/UX Design",
-      text: "User-interfaces, -flows, architecture and experiences using tools like Figma, Inkscape and more.",
+      text: "User -interfaces, -flows, architecture, experiences and more.",
     },
     {
       id: "4",
       image: appdev,
       title: "App Development",
-      text: "Cross-platform apps on React Native and C# .NET",
+      text: "Cross-platform apps.",
     },
     {
       id: "5",
       image: hosting,
       title: "Hosting",
-      text: "Hosting services primarily on Azure and or cloud-first development strategy.",
+      text: "Providing regular hosting services and or cloud development strategies.",
     },
     {
       id: "6",
       image: doc,
       title: "Documentation",
-      text: "User manuals & documentation for software, web, apis, integrations and more.",
+      text: "User manuals & documentation for software, webapps and more.",
     },
   ];
   const [visible, setVisible] = useState(false);
@@ -72,8 +72,8 @@ export default function Services() {
           <h2>Available Services</h2>
           <p>
             Building modern, stylish and high performance websites, from smaller
-            feature or company pages, to larger and more complex webapps, using
-            the latest in-demand technologies.
+            landing or feature pages, to larger and more complex webapps and
+            systems, using the latest in-demand technologies.
           </p>
           <p>
             Designing user-flows, interfaces, architecture and more. Tailored to
