@@ -16,6 +16,7 @@ export default function Navbar() {
     const observer = new IntersectionObserver(
       ([el]) => {
         setLandingHref(el.isIntersecting);
+        setNavStyle(!el.isIntersecting);
       },
       { threshold: 0.8 }
     );
@@ -27,7 +28,10 @@ export default function Navbar() {
     const services = document.getElementById("services");
     const elHeight = services.getBoundingClientRect().height;
     var th = 0.9;
-    elHeight > window.innerHeight ? (th = 0.3) : (th = 0.9);
+    elHeight > window.innerHeight ? (th = 0.3) : "";
+    window.outerHeight < 500 && window.outerWidth > window.outerHeight
+      ? (th = 0.2)
+      : "";
     const observer = new IntersectionObserver(
       ([el]) => {
         setServicesHref(el.isIntersecting);
@@ -42,7 +46,10 @@ export default function Navbar() {
     const work = document.getElementById("work");
     const elHeight = work.getBoundingClientRect().height;
     var th = 0.9;
-    elHeight > window.innerHeight ? (th = 0.3) : (th = 0.9);
+    elHeight > window.innerHeight ? (th = 0.5) : "";
+    window.outerHeight < 500 && window.outerWidth > window.outerHeight
+      ? (th = 0.2)
+      : "";
     const observer = new IntersectionObserver(
       ([el]) => {
         setWorkHref(el.isIntersecting);
@@ -63,16 +70,6 @@ export default function Navbar() {
     );
     observer.observe(contact);
     return () => observer.unobserve(contact);
-  });
-
-  useEffect(() => {
-    const landing = document.getElementById("landing");
-    const height = landing.getBoundingClientRect().height;
-    const observer = new IntersectionObserver(([el]) => {
-      setNavStyle(el.isIntersecting && scrollY > height / 2);
-    });
-    observer.observe(document.body);
-    return () => observer.unobserve(document.body);
   });
 
   const navRef = useRef();

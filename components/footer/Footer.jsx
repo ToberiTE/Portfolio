@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <div className={style.footer} id="contact">
       <div className={style.container}>
-        <h1 className={style.title}>Contact Me</h1>
+        <h1 className={style.title}>Contact Info</h1>
         <div className={style.text}>
           <div>
             <i className="fas fa-envelope"></i>

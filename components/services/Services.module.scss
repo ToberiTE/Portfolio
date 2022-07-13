@@ -3,7 +3,7 @@
 
 .services {
   overflow: hidden;
-
+  position: relative;
   @include screen(large) {
     height: calc(100vh - 4rem);
   }
@@ -18,13 +18,12 @@
   }
 
   background: linear-gradient(
-    55deg,
-    var(--clr-accent-1) 15%,
-    var(--clr-accent-2) 15%,
-    var(--clr-accent-2) 57%,
-    var(--clr-accent-1) 57%,
-    var(--clr-accent-1) 100%
-  );
+      45deg,
+      var(--clr-accent-4) 10%,
+      var(--clr-accent-2) 60%,
+      var(--clr-accent-4) 100%
+    )
+    center / cover no-repeat;
 
   .container {
     display: flex;

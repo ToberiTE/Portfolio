@@ -11,9 +11,9 @@ function MyApp({ Component, pageProps }) {
         />
         <meta
           name="description"
-          content="Portfolio of Tobias Eriksson - Fullstack Web & Software developer, UI/UX enthusiast."
+          content="Portfolio of Tobias Eriksson - Fullstack Web, Software developer and UI/UX enthusiast."
         />
-        <title>TE's Portfolio</title>
+        <title>TE Portfolio</title>
       </Head>
       <Component {...pageProps} />
     </>

@@ -9,8 +9,9 @@ function storedTheme() {
       ? setTheme("dark-theme")
       : localStorage.getItem("theme") === "light-theme"
       ? setTheme("light-theme")
-      : setTheme("dark-theme");
+      : "";
   }
+  localStorage.getItem("theme") === null ? setTheme("dark-theme") : "";
 }
 
 module.exports = {

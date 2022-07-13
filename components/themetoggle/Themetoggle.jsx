@@ -23,12 +23,12 @@ export default function Themetoggle() {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("theme") === "dark-theme") {
-      setActive(false);
-    }
-    if (localStorage.getItem("theme") === "light-theme") {
-      setActive(true);
-    }
+    localStorage.getItem("theme") === "dark-theme" ||
+    localStorage.getItem("theme") === null
+      ? setActive(false)
+      : localStorage.getItem("theme") === "light-theme"
+      ? setActive(true)
+      : "";
   }, []);
   return (
     <div className={style.container}>

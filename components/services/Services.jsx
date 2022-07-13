@@ -1,5 +1,6 @@
 import style from "./Services.module.scss";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import Card from "../card/Card";
 import webdev from "/public/webdev.svg";
 import swdev from "/public/swdev.svg";
@@ -38,7 +39,7 @@ export default function Services() {
       id: "5",
       image: hosting,
       title: "Hosting",
-      text: "Providing regular hosting services and or cloud development strategies.",
+      text: "Regular hosting services and or cloud development strategies.",
     },
     {
       id: "6",
@@ -47,8 +48,22 @@ export default function Services() {
       text: "User manuals & documentation for software, webapps and more.",
     },
   ];
-  const [visible, setVisible] = useState(false);
 
+  const [showServicesScroll, setShowServicesScroll] = useState(true);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const services = document.getElementById("services");
+    const observer = new IntersectionObserver(
+      ([el]) => {
+        el.isIntersecting
+          ? setShowServicesScroll(true)
+          : setShowServicesScroll(false);
+      },
+      { threshold: 1 }
+    );
+    observer.observe(services);
+    return () => observer.unobserve(services);
+  });
   useEffect(() => {
     const services = document.getElementById("services");
     const observer = new IntersectionObserver(
@@ -64,16 +79,16 @@ export default function Services() {
   return (
     <div className={style.services} id="services">
       <div
-        className={`${style.container} && ${
+        className={`${style.container} ${
           visible ? style.visible : style.hidden
         }`}
       >
         <div className={style.textwrapper}>
           <h2>Available Services</h2>
           <p>
-            Building modern, stylish and high performance websites, from smaller
-            landing or feature pages, to larger and more complex webapps and
-            systems, using the latest in-demand technologies.
+            Building modern, eyecatching and high performance websites, from
+            smaller landing or feature pages, to larger and more complex webapps
+            and systems, using the latest in-demand technologies.
           </p>
           <p>
             Designing user-flows, interfaces, architecture and more. Tailored to
@@ -97,6 +112,9 @@ export default function Services() {
           ))}
         </div>
       </div>
+      <Link href="#work">
+        <a className={`scroll ${showServicesScroll ? "show" : "hide"}`}></a>
+      </Link>
     </div>
   );
 }

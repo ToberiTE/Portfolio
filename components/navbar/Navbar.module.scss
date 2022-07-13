@@ -40,12 +40,15 @@
       min-width: min(40%, 50vw);
       padding: 20vh min(7rem, 15vw);
       gap: 1.5em;
+
       @include screen(small) {
         gap: 2.5em;
       }
+
       @include screen(medium) {
         padding: 14vh min(7rem, 15vw);
       }
+
       background-color: var(--bg-navbar);
       visibility: hidden;
       transform: translate3d(100%, 0, 0);
@@ -60,9 +63,11 @@
     ul {
       display: flex;
       padding-top: 0.2rem;
+
       @include screen(small, medium) {
         flex-direction: column;
         gap: 1.5em;
+
         @include screen(small) {
           gap: 1.75em;
         }
@@ -108,6 +113,7 @@
       }
     }
   }
+
   .navbtn {
     @include screen(large) {
       display: none;
@@ -128,15 +134,18 @@
       height: 0.15rem;
       transform: translateZ(0);
       transition: transform 350ms ease;
+
       &:nth-child(1) {
         width: 50%;
         transform-origin: right;
         align-self: flex-end;
       }
+
       &:nth-child(2) {
         transform-origin: center;
         width: 100%;
       }
+
       &:nth-child(3) {
         transform-origin: left;
         width: 50%;
@@ -148,9 +157,11 @@
         &:nth-child(1) {
           transform: rotate(-45deg) translate3d(-0.23rem, -0.31rem, 0);
         }
+
         &:nth-child(2) {
           transform: rotate(45deg);
         }
+
         &:nth-child(3) {
           transform: rotate(-45deg) translate3d(0.21rem, 0.29rem, 0);
         }
@@ -163,12 +174,15 @@
   padding-block: 0.5rem;
   background-color: var(--bg-navbar);
 }
+
 .logoSmall {
   min-width: 3rem !important;
 }
+
 @include screen(large) {
   .linkSmall {
     font-size: 1.0625rem;
+
     &:hover::after,
     &:focus-visible::after,
     &.active::after {
