@@ -82,13 +82,11 @@ button {
   }
 }
 
-@include screen(large) {
+@media screen and (-webkit-max-device-pixel-ratio: 1) {
   .hidden {
     opacity: 0;
     visibility: hidden;
     transform: translateY(10vh);
-    transition: opacity 1500ms ease, visibility 1500ms ease,
-      transform 1000ms ease;
   }
   .visible {
     opacity: 1;
@@ -146,6 +144,7 @@ button {
     }
   }
 }
+
 .hide {
   visibility: hidden;
   opacity: 0;
@@ -155,6 +154,7 @@ button {
   visibility: visible;
   opacity: 1;
 }
+
 @media (hover: hover) {
   [data-tooltip]:before {
     content: attr(data-tooltip);

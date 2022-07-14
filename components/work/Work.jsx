@@ -34,11 +34,7 @@ export default function Work() {
   });
   return (
     <div className={style.work} id="work">
-      <div
-        className={`${style.container} ${
-          visible ? style.visible : style.hidden
-        }`}
-      >
+      <div className={`${style.container} ${visible ? "visible" : "hidden"}`}>
         <div className={style.textwrapper}>
           <h2>Sample My Work</h2>
           <p>

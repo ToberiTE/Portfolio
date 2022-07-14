@@ -78,11 +78,7 @@ export default function Services() {
 
   return (
     <div className={style.services} id="services">
-      <div
-        className={`${style.container} ${
-          visible ? style.visible : style.hidden
-        }`}
-      >
+      <div className={`${style.container} ${visible ? "visible" : "hidden"}`}>
         <div className={style.textwrapper}>
           <h2>Available Services</h2>
           <p>

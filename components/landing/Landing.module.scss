@@ -37,6 +37,8 @@
     display: flex;
     padding-left: 10vw;
     align-items: center;
+    transition: opacity 1500ms ease, visibility 1500ms ease,
+      transform 1000ms ease;
 
     .textwrapper {
       flex-shrink: 0;

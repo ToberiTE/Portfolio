@@ -4,6 +4,7 @@
 .services {
   overflow: hidden;
   position: relative;
+
   @include screen(large) {
     height: calc(100vh - 4rem);
   }
@@ -26,15 +27,12 @@
     center / cover no-repeat;
 
   .container {
+    transition: opacity 1500ms ease, visibility 1500ms ease,
+      transform 1000ms ease;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-left: 10vw;
-
-    @include screen(large) {
-      transition: opacity 1500ms ease, visibility 1500ms ease,
-        transform 1000ms ease;
-    }
 
     @include screen(small, medium) {
       flex-direction: column;
@@ -105,18 +103,5 @@
         transform: rotate(3deg);
       }
     }
-  }
-}
-
-@include screen(large) {
-  .hidden {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10vh);
-  }
-  .visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
   }
 }

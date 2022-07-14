@@ -23,10 +23,8 @@
     center / cover no-repeat;
 
   .container {
-    @include screen(large) {
-      transition: opacity 1500ms ease, visibility 1500ms ease,
-        transform 1000ms ease;
-    }
+    transition: opacity 1500ms ease, visibility 1500ms ease,
+      transform 1000ms ease;
 
     .textwrapper {
       @include screen(large) {
@@ -179,18 +177,5 @@
         }
       }
     }
-  }
-}
-
-@include screen(large) {
-  .hidden {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10vh);
-  }
-  .visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
   }
 }
