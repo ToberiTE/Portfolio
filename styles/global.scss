@@ -26,6 +26,12 @@ html {
   }
 }
 
+.sections > * {
+  @media screen and (-webkit-max-device-pixel-ratio: 1) {
+    scroll-snap-align: end;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 0.75em;
 }
@@ -46,12 +52,6 @@ body {
   font-weight: $fw-400;
   font-size: clamp(1.1125rem, 5vw - 1rem, 1.2125rem);
   line-height: 1.6;
-}
-
-.sections > * {
-  @include screen(large) {
-    scroll-snap-align: end;
-  }
 }
 
 h1 {
