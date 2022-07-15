@@ -21,7 +21,7 @@ html {
   scrollbar-color: var(--clr-accent-1) var(--bg-html);
   scroll-padding-top: 4rem;
 
-  @include screen(large) {
+  @media screen and (-webkit-max-device-pixel-ratio: 1) {
     scroll-snap-type: block proximity;
   }
 }
