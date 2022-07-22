@@ -3,18 +3,20 @@
 
 .container {
   display: flex;
+  position: relative;
+  width: fit-content;
+
+  &:focus-visible {
+    outline: 0.1rem solid var(--clr-primary);
+  }
 }
 
 .togglecheckbox {
   opacity: 0;
   margin-left: -0.85rem;
 
-  &:focus-visible + .togglelabel {
-    outline: dotted 0.1rem var(--clr-primary);
-  }
-
   &:checked + .togglelabel {
-    &:before {
+    &::before {
       background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg preserveAspectRatio='none' version='1.1' viewBox='37 70.5 42 42' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23e3e300' stroke-linecap='round' stroke-width='2.5'%3E%3Ccircle cx='57.835' cy='90.844' r='10.583' fill='%23e3e300' stroke-width='.26458'/%3E%3Cpath d='m57.85 77.629-0.04519-5.3603'/%3E%3Cpath d='m77.27 90.77-5.3604-0.03901'/%3E%3Cpath d='m75.628 100.03-4.7966-2.3933'/%3E%3Cpath d='m68.869 107.36-3.1873-4.31'/%3E%3Cpath d='m57.901 110.36 0.039-5.3604'/%3E%3Cpath d='m50.547 103.28-3.1142 4.3632'/%3E%3Cpath d='m45.499 97.933-4.7556 2.4738'/%3E%3Cpath d='m44.174 90.568-5.3386 0.04697'/%3E%3Cpath d='m65.276 79.244 2.4682-4.1123'/%3E%3Cpath d='m50.433 79.603-2.5454-4.109'/%3E%3Cpath d='m70.091 83.942 4.0661-2.5436'/%3E%3Cpath d='m41.66 81.436 4.1123 2.4682'/%3E%3C/g%3E%3C/svg%3E%0A")
         center / cover no-repeat;
       animation: sun 400ms;
@@ -38,7 +40,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  &:before {
+
+  &::before {
     position: absolute;
     content: "";
     width: 2rem;

@@ -34,7 +34,8 @@
   &.flip {
     transform: rotateY(180deg);
   }
-  @include screen(large) {
+
+  @media screen and (-webkit-max-device-pixel-ratio: 1) {
     &:hover {
       box-shadow: 0 0 1rem hsla(0, 0%, 0%, 0.2);
     }

@@ -29,18 +29,23 @@ export default function Themetoggle() {
       : localStorage.getItem("theme") === "light-theme"
       ? setActive(true)
       : "";
-  }, []);
+  });
   return (
-    <div className={style.container}>
+    <div
+      onClick={clickHandler}
+      onKeyUp={handleKeypress}
+      tabIndex="0"
+      theme-tooltip="Theme"
+      className={style.container}
+      id="toggle"
+    >
       <input
+        tabIndex="1"
         type="checkbox"
-        id="toggle"
         className={style.togglecheckbox}
-        onClick={clickHandler}
-        onKeyUp={handleKeypress}
         checked={active}
         readOnly
-        aria-label="Toggle theme"
+        aria-label="theme"
       />
       <label htmlFor="toggle" className={style.togglelabel}></label>
     </div>

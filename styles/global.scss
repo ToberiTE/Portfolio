@@ -78,7 +78,7 @@ button {
   text-decoration: none;
 
   &:focus-visible {
-    outline: 0.1rem dotted var(--clr-primary);
+    outline: 0.1rem solid var(--clr-primary);
   }
 }
 
@@ -156,32 +156,35 @@ button {
 }
 
 @media (hover: hover) {
-  [data-tooltip]:before {
-    content: attr(data-tooltip);
-    font-size: 1.325rem;
+  .tooltip {
+    font-size: clamp(1.1125rem, 5vw - 1rem, 1.2125rem);
     position: absolute;
+    z-index: 1;
     opacity: 0;
     transition: opacity 100ms ease-out;
-    padding: 0.2rem 0.8rem;
-    color: $clr-primary;
+    padding-inline: 0.6rem;
+    color: var(--clr-primary);
     pointer-events: none;
     margin: -2rem 0 0 1.5rem;
-    background-color: var(--bg-html);
   }
-  [data-tooltip]:hover:before,
-  [data-tooltip]:focus-visible:before {
+  .tooltip__before {
     opacity: 1;
     transition: opacity 250ms 1000ms ease;
   }
-}
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+  [data-tooltip]::before {
+    @extend .tooltip;
+    content: attr(data-tooltip);
+    background-color: var(--clr-accent-1);
+  }
+  [theme-tooltip]::before {
+    @extend .tooltip;
+    content: attr(theme-tooltip);
+    margin: 2.4rem 0 0 -4rem;
+    background-color: var(--clr-accent-2);
+  }
+  :hover::before,
+  :focus-visible::before {
+    @extend .tooltip__before;
+  }
 }
