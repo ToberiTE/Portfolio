@@ -46,7 +46,7 @@ export default function Navbar() {
     const work = document.getElementById("work");
     const elHeight = work.getBoundingClientRect().height;
     var th = 0.9;
-    elHeight > window.innerHeight ? (th = 0.5) : "";
+    elHeight > window.innerHeight ? (th = 0.8) : "";
     window.outerHeight < 500 && window.outerWidth > window.outerHeight
       ? (th = 0.2)
       : "";

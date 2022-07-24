@@ -120,9 +120,14 @@
       z-index: 0;
       overflow: hidden;
       margin-right: 1.25vw;
-      @include screen(small) {
+
+      @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
         margin-right: 5vw;
       }
+
       text {
         fill: $clr-primary;
         font-size: 1rem;
