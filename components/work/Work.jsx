@@ -63,6 +63,7 @@ export default function Work() {
               rel="noreferrer"
               className={style.button}
             >
+              <i className="fab fa-github"></i>
               View Project
             </a>
           </div>
@@ -80,6 +81,7 @@ export default function Work() {
               rel="noreferrer"
               className={style.button}
             >
+              <i className="fab fa-github"></i>
               View Project
             </a>
           </div>
@@ -96,7 +98,8 @@ export default function Work() {
               rel="noreferrer"
               className={style.button}
             >
-              View Project
+              <i className="fab fa-github"></i>
+              View project
             </a>
           </div>
         </div>
