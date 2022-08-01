@@ -22,7 +22,7 @@ html {
   scroll-padding-top: 4rem;
 
   @media screen and (-webkit-max-device-pixel-ratio: 1) {
-    scroll-snap-type: block proximity;
+    scroll-snap-type: y proximity;
   }
 }
 

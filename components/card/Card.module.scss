@@ -4,13 +4,13 @@
 .card {
   min-width: 100%;
   box-shadow: 0 0 1rem hsla(0, 0%, 0%, 0.3);
+  @media screen and (-webkit-max-device-pixel-ratio: 1) {
+    cursor: pointer;
+  }
   transform: perspective(100rem) rotateY(0) translateY(0);
   transform-style: preserve-3d;
   transition: transform 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
     box-shadow 350ms;
-  position: relative;
-  cursor: pointer;
-  z-index: 1;
 
   &:nth-child(1) {
     background-color: var(--clr-accent-3);
@@ -60,6 +60,7 @@
       transform: rotateY(180deg);
     }
   }
+
   @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
     only screen and (-o-min-device-pixel-ratio: 3/2),
     only screen and (min--moz-device-pixel-ratio: 1.5),
@@ -77,13 +78,12 @@
   .text {
     color: var(--clr-primary);
     font-weight: $fw-300;
+    text-align: center;
   }
   .title {
-    text-align: center;
     padding-top: max(8vw, 7rem);
   }
   .text {
-    text-align: center;
     padding-inline: 5%;
   }
 }
